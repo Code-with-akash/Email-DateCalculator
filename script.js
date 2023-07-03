@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
       var resultElement = document.getElementById("result");
       
       // Set the text content of the result element to display the calculated future date
-      resultElement.textContent = "The date after " + numberOfDays + " days from " + startDate.toDateString() + " is: " + futureDate.toDateString();
+      resultElement.textContent = "The Date After " + numberOfDays + " days of is : " + futureDate.toDateString();
     });
   });
   

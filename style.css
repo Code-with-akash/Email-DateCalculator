@@ -1,74 +1,79 @@
-/* Reset default margin and padding */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-  }
-  
-  .container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-  }
-  
-  h1 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .input-container {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #d11616;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #168f0b;
-  }
-  
-  #result {
-    margin-top: 20px;
-    padding: 10px;
-    border: 0px;
-    border-radius: 4px;
-    font-weight: bold;
-    text-align: center;
-    color: #0a0a0a;
-  }
-  
-  @media (max-width: 600px) {
-    .container {
-      max-width: 300px;
-    }
-  }
-  
+body {
+  font-family: roboto;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+#emailDate{
+  font-size: 30px;
+  font-family: roboto;
+}
+
+.container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+  color: #333333;
+  font-family: 'Helvetica', sans-serif;
+}
+
+.input-container {
+  margin-bottom: 10px;
+  margin-right: 15px;
+  padding: 5px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #120d0d;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dddddd;
+  border-radius: 4px;
+  color: #121111;
+  font-family: roboto;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #e08e2a;
+  color: #ffffff;
+  font-size: large;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: roboto;
+}
+
+button:hover {
+  background-color: #08ac44;
+}
+
+#result {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  /* border: 1px solid #dddddd; */
+  border-radius: 4px;
+  color: #010d09;
+  font-weight: bold;
+  font-family: roboto;
+}
