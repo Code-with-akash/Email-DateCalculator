@@ -1,47 +1,27 @@
-// When the DOM content has been loaded
-document.addEventListener("DOMContentLoaded", function() {
-  
-    // Get the calculate button element
-    var calculateBtn = document.getElementById("calculateBtn");
-    
-    // Add a click event listener to the calculate button
-    calculateBtn.addEventListener("click", function() {
-      
-      // Get the input field for the start date
-      var startDateInput = document.getElementById("startDate");
-      
-      // Create a new Date object based on the value entered in the start date input field
-      var startDate = new Date(startDateInput.value);
-      
-      // Check if the entered start date is valid (is a valid date)
-      if (isNaN(startDate.getTime())) {
-        alert("Please enter a valid starting date in the format MM/DD/YYYY.");
-        return; // Exit the function if the start date is invalid
-      }
-      
-      // Get the input field for the number of days
-      var numberOfDaysInput = document.getElementById("numberOfDays");
-      
-      // Parse the value entered in the number of days input field as an integer
-      var numberOfDays = parseInt(numberOfDaysInput.value);
-      
-      // Check if the entered number of days is valid (is a valid number)
-      if (isNaN(numberOfDays)) {
-        alert("Please enter a valid number of days.");
-        return; // Exit the function if the number of days is invalid
-      }
-      
-      // Create a new Date object based on the start date
-      var futureDate = new Date(startDate);
-      
-      // Add the number of days (plus one extra day) to the future date
-      futureDate.setDate(startDate.getDate() + numberOfDays + 1);
-      
-      // Get the result element
-      var resultElement = document.getElementById("result");
-      
-      // Set the text content of the result element to display the calculated future date
-      resultElement.textContent = "The Date After " + numberOfDays + " days is : " + futureDate.toDateString();
-    });
-  });
-  
+// Function to calculate the future date and time
+function calculateFutureDate() {
+  // Get the input values
+  var selectedDate = dateInput.value;
+  var selectedTime = timeInput.value;
+  var numberOfDays = parseInt(daysInput.value);
+
+  // Convert date and time to milliseconds
+  var dateTime = new Date(selectedDate + ' ' + selectedTime);
+  var milliseconds = dateTime.getTime();
+
+  // Calculate the milliseconds to add based on the number of days
+  var millisecondsToAdd = numberOfDays * 24 * 60 * 60 * 1000;
+
+  // Calculate the future date and time
+  var futureDateTime = new Date(milliseconds + millisecondsToAdd);
+
+  // Extract the future date and time components
+  var futureDate = futureDateTime.toDateString();
+  var futureTime = futureDateTime.toLocaleTimeString();
+
+  // Prepare the message with the future date and time
+  var message = 'Future Date: ' + futureDate + '\nFuture Time: ' + futureTime;
+
+  // Display the future date and time in an alert message
+  alert(message);
+}

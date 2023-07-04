@@ -1,79 +1,62 @@
+.mainContainer {
+  background-color: transparent; /* Sets the background color of the container */
+  border-radius: 10px; /* Rounds the corners of the container */
+  box-shadow: 0 2px 5px rgba(91, 58, 58, 0.5); /* Adds a box shadow effect to the container */
+  padding: 20px; /* Adds padding inside the container */
+  max-width: 400px; /* Sets the maximum width of the container */
+  margin: 0 auto; /* Centers the container horizontally */
+  transition: transform 0.3s ease-in; /* Adds a transition effect to the container */
+}
+
+.mainContainer:hover {
+  transform: translateY(-5px); /* Moves the container upward when hovering over it */
+}
+
 body {
-  font-family: roboto;
-  background-color: #f7f7f7;
-  margin: 0;
-  padding: 0;
-}
-
-#emailDate{
-  font-size: 30px;
-  font-family: roboto;
-}
-
-.container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  background-image: url(https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80); /* Sets the background image of the body */
+  height: 100vh; /* Sets the height of the body to 100% of the viewport height */
+  background-position: center; /* Centers the background image horizontally and vertically */
+  background-size: cover; /* Scales the background image to cover the entire body */
 }
 
 h1 {
-  text-align: center;
-  margin-top: 0;
-  color: #333333;
-  font-family: 'Helvetica', sans-serif;
-}
-
-.input-container {
-  margin-bottom: 10px;
-  margin-right: 15px;
-  padding: 5px;
+  text-align: center; /* Centers the text horizontally */
+  color: #a45f15; /* Sets the color of the heading text */
 }
 
 label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-  color: #120d0d;
+  display: block; /* Displays the labels as block elements */
+  margin-bottom: 10px; /* Adds margin at the bottom of each label */
 }
 
-input[type="text"],
-input[type="number"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #dddddd;
-  border-radius: 4px;
-  color: #121111;
-  font-family: roboto;
+input {
+  outline: none; /* Removes the outline when input element is focused */
+  border: 1px solid transparent; /* Sets the border of the input element */
+  border-radius: 20px; /* Rounds the corners of the input element */
+  box-sizing: border-box; /* Includes the border in the total width of the input element */
+  display: block; /* Displays the input element as a block element */
+  margin-bottom: 20px; /* Adds margin at the bottom of each input element */
+  padding: 10px; /* Adds padding inside the input element */
+  width: 100%; /* Sets the width of the input element to 100% */
+  max-width: 100%; /* Sets the maximum width of the input element to 100% */
 }
 
 button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #e08e2a;
-  color: #ffffff;
-  font-size: large;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  font-family: roboto;
+  background-color: #a45f15; /* Sets the background color of the button */
+  border: none; /* Removes the border of the button */
+  color: white; /* Sets the text color of the button */
+  padding: 10px 32px; /* Adds padding inside the button */
+  text-align: center; /* Centers the text horizontally inside the button */
+  text-decoration: none; /* Removes the underline from the button */
+  border-radius: 30px; /* Rounds the corners of the button */
+  display: block; /* Displays the button as a block element */
+  font-size: 16px; /* Sets the font size of the button */
+  margin: 10px auto; /* Centers the button horizontally with margin */
+  cursor: pointer; /* Displays a pointer cursor when hovering over the button */
+  transition: transform 0.3s ease-in-out; /* Adds a transition effect to the button */
 }
 
 button:hover {
-  background-color: #08ac44;
-}
-
-#result {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #f9f9f9;
-  /* border: 1px solid #dddddd; */
-  border-radius: 4px;
-  color: #010d09;
-  font-weight: bold;
-  font-family: roboto;
+  background-color: #45a049; /* Changes the background color of the button when hovering over it */
+  transform: scale(1.1); /* Scales the button to 1.1 times its original size when hovering over it */
 }
