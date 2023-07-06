@@ -1,31 +1,41 @@
 function calculateFutureDate() {
+  var dateInput = document.getElementById("dateInput");
+  var daysInput = document.getElementById("daysInput");
+  var timeInput = document.getElementById("timeInput");
+  var result = document.getElementById("result");
+
   var selectedDate = dateInput.value;
-  var selectedTime = timeInput.value;
   var numberOfDays = parseInt(daysInput.value);
-  var selectedTimeZone = timeZoneSelect.value;
+  var selectedTime = timeInput.value;
 
   // Check if the inputs are valid
-  if (!selectedDate || !selectedTime || isNaN(numberOfDays)) {
-    result.innerHTML = "Please select a valid date and time!";
+  if (!selectedDate || isNaN(numberOfDays) || !selectedTime) {
+    result.innerHTML = "Please select a valid date & time, and number of days!";
     return;
   }
 
-  // Convert date and time to milliseconds
-  var dateTime = new Date(selectedDate + 'T' + selectedTime + ':00');
-  var milliseconds = dateTime.getTime();
+  // Convert the selected date to a Date object
+  var date = new Date(selectedDate);
 
-  // Calculate the milliseconds to add based on the number of days
-  var millisecondsToAdd = numberOfDays * 24 * 60 * 60 * 1000;
+  // Add the number of days to the selected date
+  date.setDate(date.getDate() + numberOfDays);
 
-  // Calculate the future date and time in the selected time zone
-  var futureDateTime = new Date(milliseconds + millisecondsToAdd);
-  var options = { day: 'numeric', month: 'long', year: 'numeric' };
-  var futureDate = futureDateTime.toLocaleDateString('en-US', options);
-  var futureTime = futureDateTime.toLocaleTimeString('en-US', { timeZone: selectedTimeZone });
+  // Get the hours and minutes from the selected time
+  var time = selectedTime.split(":");
+  var hours = parseInt(time[0]);
+  var minutes = parseInt(time[1]);
+
+  // Set the hours and minutes to the selected time
+  date.setHours(hours);
+  date.setMinutes(minutes);
+
+  // Format the future date and time
+  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+  var formattedDateTime = date.toLocaleDateString('en-US', options);
 
   // Prepare the message with the future date and time
-  var message = 'Future Date: ' + futureDate + ' & Time is: ' + futureTime;
+  var message = 'Future Date and Time is : ' + formattedDateTime + "<br>It is recommended that you add 15 minutes to this time to ensure best practice";
 
-  // Display the result in the result div
+  // Display the result
   result.innerHTML = message;
 }

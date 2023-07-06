@@ -101,19 +101,6 @@ button:hover {
   /* Scales the button to 1.1 times its original size when hovering over it */
 }
 
-#timeZoneSelect {
-  font-size: 14px;
-  padding: 10px;
-  border: 1px solid #ffffff;
-  border-radius: 0px;
-  outline: none;
-  width: 34%;
-}
-
-#timeZoneSelect option {
-  font-size: 14px;
-}
-
 
 #result {
   margin-bottom: 10px;
